@@ -1,56 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Settings>
-    <TimeZone>Eastern Standard Time</TimeZone>
+    <ASS>
+        <InstallWinget>False</InstallWinget>
+        <RegistryBackup>True</RegistryBackup>
+        <RegistryFile>preferences.reg</RegistryFile>
+        <Unattended>True</Unattended>
+    </ASS>
+    <System>
+        <TimeZone>Eastern Standard Time</TimeZone>
+    </System>
     <Install>
-        <Object>7zip.7zip</Object>
-        <Object>9N0DX20HK701</Object>
-        <Object>9p7knl5rwt25</Object>
-        <Object>Microsoft.PowerToys</Object>
-        <Object>Microsoft.VCRedist.2005.x86</Object>
-        <Object>Microsoft.VCRedist.2005.x64</Object>
-        <Object>Microsoft.VCRedist.2008.x86</Object>
-        <Object>Microsoft.VCRedist.2008.x64</Object>
-        <Object>Microsoft.VCRedist.2010.x86</Object>
-        <Object>Microsoft.VCRedist.2010.x64</Object>
-        <Object>Microsoft.VCRedist.2012.x86</Object>
-        <Object>Microsoft.VCRedist.2012.x64</Object>
-        <Object>Microsoft.VCRedist.2013.x86</Object>
-        <Object>Microsoft.VCRedist.2013.x64</Object>
-        <Object>Microsoft.VCRedist.2015+.x86</Object>
-        <Object>Microsoft.VCRedist.2015+.x64</Object>
-        <Object>Mozilla.Firefox</Object>
-        <Object>Discord.Discord</Object>
-        <Object>CrystalDewWorld.CrystalDiskInfo</Object>
-        <Object>VideoLAN.VLC</Object>
-        <Object>WiresharkFoundation.Wireshark</Object>
-        <Object>Git.Git</Object>
-        <Object>GitHub.GitHubDesktop</Object>
-        <Object>AngusJohnson.ResourceHacker</Object>
-        <Object>KeePassXCTeam.KeePassXC</Object>
-        <Object>RaspberryPiFoundation.RaspberryPiImager</Object>
-        <Object>ShareX.ShareX</Object>
-        <Object>MHNexus.HxD</Object>
-        <Object>Mobatek.MobaXterm</Object>
-        <Object>MSYS2.MSYS2</Object>
-        <Object>OBSProject.OBSStudio</Object>
-        <Object>OpenJS.NodeJS</Object>
-        <Object>Valve.Steam</Object>
-        <Object>voidtools.Everything</Object>
-        <Object>VSCodium.VSCodium</Object>
-        <Object>WinMerge.WinMerge</Object>
+        <Package>7zip.7zip</Package>
+        <Package comment="Windows Terminal">9N0DX20HK701</Package>
+        <Package comment="Sysinternals">9p7knl5rwt25</Package>
+        <Package>AngusJohnson.ResourceHacker</Package>
+        <Package>CrystalDewWorld.CrystalDiskInfo</Package>
+        <Package>Discord.Discord</Package>
+        <Package>Git.Git</Package>
+        <Package>GitHub.GitHubDesktop</Package>
+        <Package>KeePassXCTeam.KeePassXC</Package>
+        <Package>MHNexus.HxD</Package>
+        <Package>Microsoft.PowerToys</Package>
+        <Package>Microsoft.VCRedist.2005.x86</Package>
+        <Package>Microsoft.VCRedist.2005.x64</Package>
+        <Package>Microsoft.VCRedist.2008.x86</Package>
+        <Package>Microsoft.VCRedist.2008.x64</Package>
+        <Package>Microsoft.VCRedist.2010.x86</Package>
+        <Package>Microsoft.VCRedist.2010.x64</Package>
+        <Package>Microsoft.VCRedist.2012.x86</Package>
+        <Package>Microsoft.VCRedist.2012.x64</Package>
+        <Package>Microsoft.VCRedist.2013.x86</Package>
+        <Package>Microsoft.VCRedist.2013.x64</Package>
+        <Package>Microsoft.VCRedist.2015+.x86</Package>
+        <Package>Microsoft.VCRedist.2015+.x64</Package>
+        <Package>Mobatek.MobaXterm</Package>
+        <Package>Mozilla.Firefox</Package>
+        <Package>MSYS2.MSYS2</Package>
+        <Package>OBSProject.OBSStudio</Package>
+        <Package>OpenJS.NodeJS</Package>
+        <Package>RaspberryPiFoundation.RaspberryPiImager</Package>
+        <Package>ShareX.ShareX</Package>
+        <Package>Valve.Steam</Package>
+        <Package>VideoLAN.VLC</Package>
+        <Package>voidtools.Everything</Package>
+        <Package>VSCodium.VSCodium</Package>
+        <Package>WinMerge.WinMerge</Package>
+        <Package>WiresharkFoundation.Wireshark</Package>
     </Install>
     <Uninstall>
-        <Object>Microsoft.549981C3F5F10</Object>
-        <Object>Microsoft.MicrosoftEdge.Stable</Object>
-        <Object>Microsoft.People</Object>
-        <Object>Microsoft.WindowsCamera</Object>
-        <Object>Microsoft.WindowsMaps</Object>
-        <Object>Microsoft.Xbox.TCUI</Object>
-        <Object>Microsoft.XboxGameOverlay</Object>
-        <Object>Microsoft.XboxGamingOverlay</Object>
-        <Object>Microsoft.XboxIdentityProvider</Object>
-        <Object>Microsoft.XboxSpeechToTextOverlay</Object>
-        <Object>Microsoft.YourPhone</Object>
-        <Object>Microsoft.ZuneMusic</Object>
+        <Package comment="Cortana">Microsoft.549981C3F5F10</Package>
+        <Package>Microsoft.MicrosoftEdge.Stable</Package>
+        <Package>Microsoft.People</Package>
+        <Package>Microsoft.WindowsCamera</Package>
+        <Package>Microsoft.WindowsMaps</Package>
+        <Package>Microsoft.XboxGameOverlay</Package>
+        <Package>Microsoft.XboxSpeechToTextOverlay</Package>
+        <Package>Microsoft.YourPhone</Package>
+        <Package>Microsoft.ZuneMusic</Package>
     </Uninstall>
 </Settings>
