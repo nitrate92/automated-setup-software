@@ -34,7 +34,7 @@ if ($RegistryImport) {
 }
 
 if ($ConfigFile.Settings.ASS.InstallWinget -eq "True") {
-  # Code "borrowed" from Microsoft
+  # Code "borrowed" from Microslop
   Write-Host "Installing Winget..."
   $progressPreference = 'silentlyContinue'
   $latestWingetMsixBundleUri = $(Invoke-RestMethod https://api.github.com/repos/microsoft/winget-cli/releases/latest).assets.browser_download_url | Where-Object { $_.EndsWith(".msixbundle") }
