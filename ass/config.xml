@@ -14,6 +14,7 @@
         <Package comment="Windows Terminal">9N0DX20HK701</Package>
         <Package comment="Sysinternals">9p7knl5rwt25</Package>
         <Package>AngusJohnson.ResourceHacker</Package>
+        <Package>CPUID.HWMonitor</Package>
         <Package>CrystalDewWorld.CrystalDiskInfo</Package>
         <Package>Discord.Discord</Package>
         <Package>Git.Git</Package>
