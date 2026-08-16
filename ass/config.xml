@@ -2,13 +2,16 @@
 <Settings>
     <ASS>
         <InstallWinget>False</InstallWinget>
-        <RegistryBackup>True</RegistryBackup>
+        <RegistryBackup>False</RegistryBackup>
         <RegistryFile>preferences.reg</RegistryFile>
         <Unattended>True</Unattended>
     </ASS>
     <System>
         <TimeZone>Eastern Standard Time</TimeZone>
     </System>
+    <Delete>
+        <File>C:\Users\Public\Desktop\Microsoft Edge.lnk</File>
+    </Delete>
     <Install>
         <Package>7zip.7zip</Package>
         <Package comment="Windows Terminal">9N0DX20HK701</Package>

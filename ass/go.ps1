@@ -14,13 +14,13 @@ if (Test-Path $CfgPath -PathType Leaf) {
   [xml]$ConfigFile = Get-Content $CfgPath
 }
 else {
-  Write-Host "! Config file not found at '$CfgPath', exiting."
+  Write-Host " ! Config file not found at '$CfgPath', exiting."
   exit 1
 }
 
 $Unattended = $ConfigFile.Settings.ASS.Unattended
-$RegistryImport = $ConfigFile.Settings.ASS.RegistryFile
 
+$RegistryImport = $ConfigFile.Settings.ASS.RegistryFile
 if ($RegistryImport) {
   if ($Unattended -eq "True" -or $(Read-Host "Would you like to import your registry settings from '$RegistryImport'?") -eq 'y') {
     if ($ConfigFile.Settings.ASS.RegistryBackup -eq "True") {
@@ -30,6 +30,27 @@ if ($RegistryImport) {
     }
     Write-Host "Importing '$RegistryImport'"
     reg import "$RegistryImport"
+  }
+}
+
+$DeleteMe = $ConfigFile.Settings.Delete.File | Sort-Object
+Write-Host "The following will be deleted:"
+foreach ($file in $DeleteMe) {
+  if ($file.comment) {
+    Write-Host "$($file.InnerText)`t`t`t`t`"$($file.comment)`"" -ForegroundColor Red
+  }
+  else {
+    Write-Host $file -ForegroundColor Red
+  }
+}
+if ($Unattended -eq "True" -or $(Read-Host "Would you like to delete these files? (y/n)") -eq 'y') {
+  Write-Host "Deleting files"
+  foreach ($file in $DeleteMe) {
+    if (Test-Path $file) {
+      Remove-Item $file -verbose
+    } else {
+      Write-Host "Couldn't find '$file' for deletion"
+    }
   }
 }
 
@@ -47,12 +68,6 @@ if ($ConfigFile.Settings.ASS.InstallWinget -eq "True") {
 }
 
 $InstallMe = $ConfigFile.Settings.Install.Package | Sort-Object
-
-# 549981C3F5F10 = Cortana
-$UninstallMe = $ConfigFile.Settings.Uninstall.Package | Sort-Object
-
-$tz = $ConfigFile.Settings.System.TimeZone
-
 Write-Host "The following will be installed:"
 foreach ($package in $InstallMe) {
   if ($package.comment) {
@@ -72,6 +87,8 @@ if ($Unattended -eq "True" -or $(Read-Host "Would you like to install these apps
     }
   }
 }
+
+$UninstallMe = $ConfigFile.Settings.Uninstall.Package | Sort-Object
 Write-Host "The following will be uninstalled:"
 foreach ($package in $UninstallMe) {
   if ($package.comment) {
@@ -81,7 +98,6 @@ foreach ($package in $UninstallMe) {
     Write-Host $package -ForegroundColor Red
   }
 }
-
 if ($Unattended -eq "True" -or $(Read-Host "Would you like to uninstall these apps? (y/n)") -eq 'y') {
   Write-Host "Backing up list of all installed apps to '$($pwd.Path)\InstalledBefore.txt'."
   Get-AppxPackage -AllUsers > InstalledBefore.txt
@@ -96,6 +112,7 @@ if ($Unattended -eq "True" -or $(Read-Host "Would you like to uninstall these ap
   }
 }
 
+$tz = $ConfigFile.Settings.System.TimeZone
 Write-Host "Setting Time Zone to '$tz'"
 Set-TimeZone -Id "$tz"
 
